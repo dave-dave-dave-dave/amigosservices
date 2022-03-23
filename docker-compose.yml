@@ -42,7 +42,7 @@ services:
       - "15672:15672"
 networks:
   postgres:
-    driver: bridg e
+    driver: bridge
 
 volumes:
   postgres:
