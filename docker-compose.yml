@@ -9,11 +9,10 @@ services:
     volumes:
       - postgres:/data/postgres
     ports:
-      - "5433:5432"
+      - "5432:5432"
     networks:
       - postgres
     restart: unless-stopped
-
   pgadmin:
     container_name: pgadmin
     image: dpage/pgadmin4
@@ -32,7 +31,6 @@ services:
     image: openzipkin/zipkin
     container_name: zipkin
     ports:
-      # Port used for the Zipkin UI and HTTP Api
       - "9411:9411"
     networks:
       - spring
@@ -42,6 +40,8 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
+    networks:
+      - spring
   eureka-server:
     image: daveincen/eureka-server:latest
     container_name: eureka-server
@@ -110,7 +110,6 @@ services:
       - eureka-server
       - postgres
       - rabbitmq
-
 networks:
   postgres:
     driver: bridge
