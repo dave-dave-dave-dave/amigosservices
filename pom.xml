@@ -91,10 +91,6 @@
                             <image>eclipse-temurin</image>
                             <platforms>
                                 <platform>
-                                    <architecture>arm64</architecture>
-                                    <os>linux</os>
-                                </platform>
-                                <platform>
                                     <architecture>amd64</architecture>
                                     <os>linux</os>
                                 </platform>
